@@ -147,7 +147,7 @@ function startServer() {
         console.log(file);
         let data = fs.readFileSync(file.path);
         let grpc_client = new proto.Recognize(
-            'localhost:55102',
+            '54.213.245.181:50051',
             grpc.credentials.createInsecure()
         );
         const msg = {
@@ -177,7 +177,7 @@ function startServer() {
     app.post("/punctuate", (req, res)=>{
         const {text, language } = req.body;
         let grpc_client = new proto.Recognize(
-            'localhost:55102',
+            '54.213.245.181:50051',
             grpc.credentials.createInsecure()
         );
         const msg = {
@@ -266,7 +266,7 @@ function main() {
 
     io.on("connection", (socket) => {
         let grpc_client = new proto.Recognize(
-            'localhost:55102',
+            '54.213.245.181:50051',
             grpc.credentials.createInsecure()
         );
         socket.on("disconnect", (reason) => {
