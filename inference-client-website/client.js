@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 var ss = require('socket.io-stream');
 ss.forceBase64 = true;
-const server = require("http").createServer(app);
+const server = require("https").createServer(app);
 const io = require("socket.io")(server);
 const path = require("path");
 const fs = require("fs");
@@ -147,7 +147,7 @@ function startServer() {
         console.log(file);
         let data = fs.readFileSync(file.path);
         let grpc_client = new proto.Recognize(
-            '54.184.23.198:50051',
+            'dns://54.184.23.198:50051',
             grpc.credentials.createInsecure()
         );
         const msg = {
