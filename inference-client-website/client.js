@@ -105,7 +105,7 @@ function startServer() {
     const upload = multer({ storage: multerStorage });
     app.use(upload.single('audio_data'));
     app.get("/", function (req, res) {
-        res.redirect("/hindi");
+        res.redirect("/bengali");
     });
 
     app.get("/feedback", function (req, res) {
