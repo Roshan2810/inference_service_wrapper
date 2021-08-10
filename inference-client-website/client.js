@@ -147,7 +147,7 @@ function startServer() {
         console.log(file);
         let data = fs.readFileSync(file.path);
         let grpc_client = new proto.Recognize(
-            'dns://54.184.23.198:50051',
+            '54.184.23.198:50051',
             grpc.credentials.createInsecure()
         );
         const msg = {
