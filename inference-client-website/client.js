@@ -192,7 +192,7 @@ function startServer() {
     );
     const msg = {
       text: text,
-      language: language === "en" ? "en-IN" : language,
+      language: language,
       enabledItn: true,
     };
     getPunctuation(grpc_client, msg)
